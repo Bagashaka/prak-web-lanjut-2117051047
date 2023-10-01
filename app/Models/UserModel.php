@@ -6,6 +6,10 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
+public function getUser(){
+    return $this->join('kelas', 'kelas.id=user.id_kelas')->findAll();
+}
+
     protected $DBGroup          = 'default';
     protected $table            = 'user';
     protected $primaryKey       = 'id';

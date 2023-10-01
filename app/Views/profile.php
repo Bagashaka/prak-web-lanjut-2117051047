@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Profile</title>
-  <link rel="stylesheet" href="<?=base_url("assets/css/style.css")?>">
-</head>
-<body>
+<?= $this->extend('layouts/app') ?>
+
+  <?= $this->section('content')?>
   <center>
     <img src="<?php echo base_url('assets/img/Starboy.png');?>" alt="">
   </center>
@@ -28,5 +24,4 @@
       </tr>
     </table>
   </center>
-</body>
-</html>
+  <?= $this->endSection()?>

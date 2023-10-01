@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+
+    <?= $this->extend('layouts/app') ?>
+
+    <?= $this->section('content')?>
     <div class="container mt-5">
         <h1 class="mb-4">Create User</h1>
         <?php $nama_kelas = session()->getFlashdata('nama_kelas'); ?>
@@ -41,5 +38,4 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-</body>
-</html>
+    <?= $this->endSection()?>
