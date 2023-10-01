@@ -6,6 +6,11 @@ use CodeIgniter\Model;
 
 class KelasModel extends Model
 {
+
+    public function getKelas(){
+      
+        return $this->findAll();
+    }
     protected $DBGroup          = 'default';
     protected $table            = 'kelas';
     protected $primaryKey       = 'id';
