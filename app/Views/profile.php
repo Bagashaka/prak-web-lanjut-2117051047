@@ -2,7 +2,7 @@
 
   <?= $this->section('content')?>
   <center>
-    <img src="<?php echo base_url('assets/img/Starboy.png');?>" alt="">
+    <img src="<?= $user['foto']  ?? '<default-foto>'?>" width="30%" height="30%" alt="">
   </center>
   <br>
   <center> 
@@ -10,17 +10,17 @@
       <tr>
         <td>Nama</td>
         <td>:</td>
-        <td> <?=$nama?> </td>
+        <td> <?=$user['nama']?> </td>
       </tr>
       <tr>
         <td>Kelas</td>
         <td>:</td>
-        <td> <?=$kelas?> </td>
+        <td> <?=$user['nama_kelas']?> </td>
       </tr>
       <tr>
         <td>NPM</td>
         <td>:</td>
-        <td> <?=$npm?> </td>
+        <td> <?=$user['npm']?> </td>
       </tr>
     </table>
   </center>

@@ -4,6 +4,7 @@
 
 <div class="container">
     <h1>Data Mahasiswa</h1>
+    <a href="user/create">Tambah Data</a>
     <table class="table table-striped table-hover">
         <thead>
             <tr>
@@ -20,12 +21,14 @@
             foreach ($users as $user){
             ?>
             <tr>
+                <td></td>
                 <td><?= $nomor++ ?></td>
                 <td><?= $user['nama'] ?></td>
                 <td><?= $user['npm'] ?></td>
                 <td><?= $user['nama_kelas'] ?></td>
                 <td>
-                    <!-- Tambahkan tombol aksi di sini jika diperlukan -->
+                    <a href="<?= base_url('user/' . $user['id']) ?>"> Detail</a>
+                    <button type="button">Delete</button>
                 </td>
             </tr>
             <?php 
