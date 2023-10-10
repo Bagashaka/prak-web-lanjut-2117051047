@@ -2,7 +2,7 @@
 
   <?= $this->section('content')?>
   <center>
-    <img src="<?= $user['foto']  ?? '<default-foto>'?>" width="30%" height="30%" alt="">
+    <img src="<?= $user['foto']  ?? base_url("assets/img/noProfile.png")?>" width="30%" height="30%" alt="">
   </center>
   <br>
   <center> 
