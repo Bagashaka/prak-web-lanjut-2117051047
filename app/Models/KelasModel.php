@@ -3,13 +3,43 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-
+use Exception;
+use mysqli_sql_exception;
 class KelasModel extends Model
 {
 
-    public function getKelas(){
-      
+    public function getKelas($id = null){
+        if($id != null){
+            return $this->select('kelas.*')->find($id);
+        }
         return $this->findAll();
+    }
+
+    public function getAggotaKelas($id = null){
+        return $this->select('kelas.*, user.nama')
+        ->join('user', 'user.id_kelas = kelas.id')
+        ->where('kelas.id', $id)
+        ->findAll();
+    }
+
+    public function saveKelas($data){
+        $this->insert($data);
+    }
+    public function updateKelas($data, $id){
+        $this->update($id, $data);
+    }
+
+    public function deleteKelas($id)
+    {
+        try {
+            $this->delete($id);
+        } catch (mysqli_sql_exception $e) {
+            if (str_starts_with($e->getMessage(), "Data too long for column")) {
+                // handle the error
+            } else {
+                throw $e;
+            }
+        }
     }
     protected $DBGroup          = 'default';
     protected $table            = 'kelas';
